@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    transition: 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1f2937;
+}
+
+.timer-card,
+.settings-card,
+.history-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.mode {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.mode.focus {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.mode.break {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.mode.paused {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.timer {
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: #111827;
+    margin: 20px 0;
+}
+
+.status {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#startBtn { background: #22c55e; color: white; }
+#pauseBtn { background: #f59e0b; color: white; }
+#resumeBtn { background: #3b82f6; color: white; }
+#resetBtn { background: #ef4444; color: white; }
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:focus,
+input:focus {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.settings-card h2,
+.history-card h2 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #374151;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#historyList {
+    list-style: none;
+}
+
+#historyList li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f9fafb;
+    border-left: 4px solid #22c55e;
+    border-radius: 8px;
+}
+
+.empty-history {
+    border-left: none !important;
+    text-align: center;
+    color: #6b7280;
+}
+
+.alarm-controls {
+    display: none;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#stopAlarmBtn {
+    background: #ef4444;
+    color: white;
+}
+
+#snoozeBtn {
+    background: #6366f1;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+
+    .timer {
+        font-size: 60px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .timer {
+        font-size: 48px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .timer-card,
+    .settings-card,
+    .history-card {
+        padding: 18px;
+    }
+}
